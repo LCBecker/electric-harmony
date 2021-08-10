@@ -43,21 +43,15 @@ const GamePlayColumn = () => {
   const getNotes = () => {
     let columns = Object.assign({}, noteColumns);
     const note = simpleSong[timer];
-    // for (let i = 0; i < timer; i++) {
-    //   const note = simpleSong[i]
     columns[note].push(<Grid key={`${note}_${timer}`}><AnimatedArrow direction={note} /></Grid>);
-    // }
     setNoteColumns(columns);
   }
 
-
-  //const notes = simpleSong.map((note, index) => );
-
   return (
     <Grid container item direction="row" className={classes.column}>
-      <Grid item xs={3}>{noteColumns.up}</Grid>
-      <Grid item xs={3}>{noteColumns.down}</Grid>
       <Grid item xs={3}>{noteColumns.left}</Grid>
+      <Grid item xs={3}>{noteColumns.down}</Grid>
+      <Grid item xs={3}>{noteColumns.up}</Grid>
       <Grid item xs={3}>{noteColumns.right}</Grid>
       {/* {notes} */}
       <div className={classes.goal} />
